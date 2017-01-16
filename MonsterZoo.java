@@ -1,42 +1,42 @@
-public class MonsterZoo {
-	double distance=0.0;//•à‚¢‚½‹——£
-	int balls=10;//ƒ‚ƒ“ƒXƒ^[‚ğ•ß‚Ü‚¦‚ç‚ê‚éƒ{[ƒ‹‚Ì”
-	int fruits=0;//‚Ô‚Â‚¯‚é‚Æƒ‚ƒ“ƒXƒ^[‚ª•ß‚Ü‚¦‚â‚·‚­‚È‚éƒtƒ‹[ƒc
+ï»¿public class MonsterZoo {
+	double distance=0.0;//æ­©ã„ãŸè·é›¢
+	int balls=10;//ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’æ•ã¾ãˆã‚‰ã‚Œã‚‹ãƒœãƒ¼ãƒ«ã®æ•°
+	int fruits=0;//ã¶ã¤ã‘ã‚‹ã¨ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒæ•ã¾ãˆã‚„ã™ããªã‚‹ãƒ•ãƒ«ãƒ¼ãƒ„
 
-	//—‘‚ÍÅ‘å9ŒÂ‚Ü‚Å‚Ä‚éD—‘‚ğæ“¾‚·‚é‚Æegg‚Étrue‚ª‘ã“ü‚³‚êC
-	//ˆÚ“®‚·‚é‚½‚Ñ‚É,eggDistance‚É1.0km‚¸‚Â‰ÁZ‚³‚ê‚éD
-	//3kmˆÚ“®‚·‚é‚Æƒ‰ƒ“ƒ_ƒ€‚Åƒ‚ƒ“ƒXƒ^[‚ª›z‚é
+	//åµã¯æœ€å¤§9å€‹ã¾ã§æŒã¦ã‚‹ï¼åµã‚’å–å¾—ã™ã‚‹ã¨eggã«trueãŒä»£å…¥ã•ã‚Œï¼Œ
+	//ç§»å‹•ã™ã‚‹ãŸã³ã«,eggDistanceã«1.0kmãšã¤åŠ ç®—ã•ã‚Œã‚‹ï¼
+	//3kmç§»å‹•ã™ã‚‹ã¨ãƒ©ãƒ³ãƒ€ãƒ ã§ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ãŒå­µã‚‹
 	double eggDistance[] = new double[9];
 	boolean egg[] = new boolean[9];
 
-	//ƒ†[ƒU‚ªGet‚µ‚½ƒ‚ƒ“ƒXƒ^[ˆê——
+	//ãƒ¦ãƒ¼ã‚¶ãŒGetã—ãŸãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ä¸€è¦§
 	String userMonster[] = new String[100];
 
-	//ƒ‚ƒ“ƒXƒ^[}ŠÓDƒ‚ƒ“ƒXƒ^[‚Ì–¼‘O‚ÆƒŒƒA“x(0.0~9.0)‚ª‚»‚ê‚¼‚ê‚Ì”z—ñ‚É•Û‘¶‚³‚ê‚Ä‚¢‚é
-	//ƒŒƒA“x‚ª‚‚¢‚Ù‚¤‚ª•ß‚Ü‚¦‚É‚­‚¢
+	//ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼å›³é‘‘ï¼ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã®åå‰ã¨ãƒ¬ã‚¢åº¦(0.0~9.0)ãŒãã‚Œãã‚Œã®é…åˆ—ã«ä¿å­˜ã•ã‚Œã¦ã„ã‚‹
+	//ãƒ¬ã‚¢åº¦ãŒé«˜ã„ã»ã†ãŒæ•ã¾ãˆã«ãã„
 	String monsterZukan[] = new String[22];
 	double monsterRare[] = new double[22];
 
-	//ŒÄ‚Ño‚·‚Æ1km distance‚ª‘‚¦‚é
+	//å‘¼ã³å‡ºã™ã¨1km distanceãŒå¢—ãˆã‚‹
 	void move(){
 		this.distance++;
-		for(int i=0;i<this.egg.length;i++){//—‘‚ÍˆÚ“®‹——£‚ªi‚Ş‚Æ›z‰»‚·‚é‚½‚ßC‰½kmˆÚ“®‚µ‚½‚©‚ğXV‚·‚é
+		for(int i=0;i<this.egg.length;i++){//åµã¯ç§»å‹•è·é›¢ãŒé€²ã‚€ã¨å­µåŒ–ã™ã‚‹ãŸã‚ï¼Œä½•kmç§»å‹•ã—ãŸã‹ã‚’æ›´æ–°ã™ã‚‹
 			if(this.egg[i]==true){
 				this.eggDistance[i]++;
 			}
 		}
 
-		int flg1 = (int)(Math.random()*10);//0,1‚Ìê‡‚ÍƒY[stationC7~9‚Ìê‡‚Íƒ‚ƒ“ƒXƒ^[
+		int flg1 = (int)(Math.random()*10);//0,1ã®å ´åˆã¯ã‚ºãƒ¼stationï¼Œ7~9ã®å ´åˆã¯ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼
 		if(flg1<=1){
-			System.out.println("ƒY[station‚ğŒ©‚Â‚¯‚½I");
-			int b=(int)(Math.random()*3);//ball,fruits,egg‚ªƒ‰ƒ“ƒ_ƒ€‚Éo‚é
+			System.out.println("ã‚ºãƒ¼stationã‚’è¦‹ã¤ã‘ãŸï¼");
+			int b=(int)(Math.random()*3);//ball,fruits,eggãŒãƒ©ãƒ³ãƒ€ãƒ ã«å‡ºã‚‹
 			int f=(int)(Math.random()*2);
 			int e=(int)(Math.random()*2);
-			System.out.println("ƒ{[ƒ‹‚ğ"+b+"ŒÂC"+"ƒtƒ‹[ƒc‚ğ"+f+"ŒÂ"+"—‘‚ğ"+e+"ŒÂGet‚µ‚½I");
+			System.out.println("ãƒœãƒ¼ãƒ«ã‚’"+b+"å€‹ï¼Œ"+"ãƒ•ãƒ«ãƒ¼ãƒ„ã‚’"+f+"å€‹"+"åµã‚’"+e+"å€‹Getã—ãŸï¼");
 			this.balls=this.balls+b;
 			this.fruits=this.fruits+f;
-			if(e>=1){//—‘‚ğ1‚ÂˆÈãGet‚µ‚½‚ç
-				//egg[]‚É10ŒÂˆÈã—‘‚ª‚È‚¢ê‡‚ÍV‚µ‚¢—‘ƒf[ƒ^‚ğƒZƒbƒg‚·‚é
+			if(e>=1){//åµã‚’1ã¤ä»¥ä¸ŠGetã—ãŸã‚‰
+				//egg[]ã«10å€‹ä»¥ä¸ŠåµãŒãªã„å ´åˆã¯æ–°ã—ã„åµãƒ‡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 				for(int i=0;i<this.eggDistance.length;i++){
 					if(this.egg[i]==false){
 						this.egg[i]=true;
@@ -46,36 +46,82 @@ public class MonsterZoo {
 				}
 			}
 		}else if(flg1>=7){
-			int m = (int)(this.monsterZukan.length*Math.random());//monsterZukan‚©‚çƒ‰ƒ“ƒ_ƒ€‚Éƒ‚ƒ“ƒXƒ^[‚ğo‚·
-			System.out.println(this.monsterZukan[m]+"‚ªŒ»‚ê‚½I");
-			for(int i=0;i<3&&this.balls>0;i++){//•ß‚Ü‚¦‚é or 3‰ñƒ{[ƒ‹‚ğ“Š‚°‚é‚Ü‚ÅŒJ‚è•Ô‚·
-				int r = (int)(6*Math.random());//0~5‚Ü‚Å‚Ì”š‚ğƒ‰ƒ“ƒ_ƒ€‚É•Ô‚·
+			int m = (int)(this.monsterZukan.length*Math.random());//monsterZukanã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’å‡ºã™
+			System.out.println(this.monsterZukan[m]+"ãŒç¾ã‚ŒãŸï¼");
+			for(int i=0;i<3&&this.balls>0;i++){//æ•ã¾ãˆã‚‹ or 3å›ãƒœãƒ¼ãƒ«ã‚’æŠ•ã’ã‚‹ã¾ã§ç¹°ã‚Šè¿”ã™
+				int r = (int)(6*Math.random());//0~5ã¾ã§ã®æ•°å­—ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«è¿”ã™
 				if(this.fruits>0){
-					System.out.println("ƒtƒ‹[ƒc‚ğ“Š‚°‚½I•ß‚Ü‚¦‚â‚·‚³‚ª”{‚É‚È‚éI");
+					System.out.println("ãƒ•ãƒ«ãƒ¼ãƒ„ã‚’æŠ•ã’ãŸï¼æ•ã¾ãˆã‚„ã™ã•ãŒå€ã«ãªã‚‹ï¼");
 					this.fruits--;
 					r = r * 2;
 				}
-				System.out.println(this.monsterZukan[m]+"‚Éƒ{[ƒ‹‚ğ“Š‚°‚½");
+				System.out.println(this.monsterZukan[m]+"ã«ãƒœãƒ¼ãƒ«ã‚’æŠ•ã’ãŸ");
 				this.balls--;
-				if(this.monsterRare[m]<=r){//monsterRare[m]‚Ì’l‚ªrˆÈ‰º‚Ìê‡
-					System.out.println(this.monsterZukan[m]+"‚ğ•ß‚Ü‚¦‚½I");
+				if(this.monsterRare[m]<=r){//monsterRare[m]ã®å€¤ãŒrä»¥ä¸‹ã®å ´åˆ
+					System.out.println(this.monsterZukan[m]+"ã‚’æ•ã¾ãˆãŸï¼");
 					for(int j=0;j<userMonster.length;j++){
 						if(this.userMonster[j]==null){
 							this.userMonster[j]=this.monsterZukan[m];
 							break;
 						}
 					}
-					break;//ƒ{[ƒ‹“Š‚°I—¹
+					break;//ãƒœãƒ¼ãƒ«æŠ•ã’çµ‚äº†
 				}else{
-					System.out.println(this.monsterZukan[m]+"‚É“¦‚°‚ç‚ê‚½I");
+					System.out.println(this.monsterZukan[m]+"ã«é€ƒã’ã‚‰ã‚ŒãŸï¼");
 				}
 			}
 		}
 		for(int i=0;i<this.egg.length;i++){
 			if(this.egg[i]==true&&this.eggDistance[i]>=3){
-				System.out.println("—‘‚ª›z‚Á‚½I");
+				System.out.println("åµãŒå­µã£ãŸï¼");
 				int m = (int)(this.monsterZukan.length*Math.random());
-				System.out.println(this.monsterZukan[m]+"‚ªY‚Ü‚ê‚½I");
+				System.out.println(this.monsterZukan[m]+"ãŒç”£ã¾ã‚ŒãŸï¼");
+
+				for(int j=0;j<userMonster.length;j++){
+					if(this.userMonster[j]==null){
+						this.userMonster[j]=this.monsterZukan[m];
+						break;
+					}
+				}
+				this.egg[i]=false;
+				this.eggDistance[i]=0.0;
+			}
+		}
+	}
+
+	public double getDistance() {
+		return distance;
+	}
+
+	public int getBalls() {
+		return balls;
+	}
+
+	public int getFruits() {
+		return fruits;
+	}
+
+	public String[] getUserMonster() {
+		return userMonster;
+	}
+
+	public void setMonsterZukan(String[] monsterZukan) {
+		this.monsterZukan = monsterZukan;
+	}
+
+	public void setMonsterRare(double[] monsterRare) {
+		this.monsterRare = monsterRare;
+	}
+}
+					System.out.println(this.monsterZukan[m]+"ã«é€ƒã’ã‚‰ã‚ŒãŸï¼");
+				}
+			}
+		}
+		for(int i=0;i<this.egg.length;i++){
+			if(this.egg[i]==true&&this.eggDistance[i]>=3){
+				System.out.println("åµãŒå­µã£ãŸï¼");
+				int m = (int)(this.monsterZukan.length*Math.random());
+				System.out.println(this.monsterZukan[m]+"ãŒç”£ã¾ã‚ŒãŸï¼");
 
 				for(int j=0;j<userMonster.length;j++){
 					if(this.userMonster[j]==null){
