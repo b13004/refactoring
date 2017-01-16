@@ -10,18 +10,16 @@
 		while(true){
 			try {
 				Thread.sleep(1000);
-				if(pz.getBalls()>0){
+				if(pz.getBalls()<=0)break;
 					pz.move();
-					System.out.println("手持ちのボールは"+pz.getBalls()+"個，フルーツは"+pz.getFruits()+"個");
+					pz.showThrowableItems();
 					System.out.println(pz.getDistance()+"km歩いた．");
-				}else{
-					break;
-				}
+				
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+		
 		}
-
 		System.out.println("ボールがなくなった！");
 
 		for(int i=0;i<pz.getUserMonster().length;i++){
@@ -30,7 +28,6 @@
 			}
 		}
 	}
-
 	//テスト用のモンスターデータを登録するメソッド
 	public static void setMonsterZukan(){
 		String tempMonster[] = new String[22];
